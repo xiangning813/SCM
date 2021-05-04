@@ -13,5 +13,9 @@ namespace SCM.Controllers
         {
             return View();
         }
+        public ActionResult Depot()
+        {
+            return View();
+        }
     }
 }

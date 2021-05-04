@@ -309,7 +309,7 @@
     <Content Include="layui\lay\modules\tree.js" />
     <Content Include="layui\lay\modules\upload.js" />
     <Content Include="layui\lay\modules\util.js" />
-    <Content Include="Views\Buy\Index.cshtml" />
+    <Content Include="Views\Buy\Depot.cshtml" />
     <None Include="Views\Pdskc\Assemble.cshtml" />
     <None Include="Views\Basic\customer.cshtml" />
     <None Include="Views\Basic\customeradd.cshtml" />
