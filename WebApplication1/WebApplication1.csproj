@@ -43,8 +43,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -81,16 +89,202 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Models\PSS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PSS.Context.cs</LastGenOutput>
+      <DependentUpon>PSS.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\PSS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PSS.edmx</DependentUpon>
+      <LastGenOutput>PSS.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CheckDepot.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CheckDepotDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Compose.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComposeDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerLevel.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerOrder.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerOrderDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customers.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Depots.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DepotStock.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DevolveDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Devolves.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InOutDepot.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InOutDepotDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LostDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Losts.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OtherInDepot.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OtherInDepotDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OtherOutDepot.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OtherOutDepotDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayOffDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayOffs.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PopedomRole.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Popedoms.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProduceInDepot.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProduceInDepotDeteil.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProduceOutDepot.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProduceOutDepotDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductColor.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductLend.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Products.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductSpec.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductTypes.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductUnit.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PSS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PSS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PSS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PSS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PSS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuotePrice.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuotePriceDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Roles.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SaleDepot.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SaleDepotDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SaleReturn.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SaleReturnDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SplitDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Splits.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockInDepot.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockInDepotDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockOutDepot.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockOutDepotDetail.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Stocks.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Users.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsersRole.cs">
+      <DependentUpon>PSS.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Models\PSS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PSS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PSS.edmx.diagram">
+      <DependentUpon>PSS.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -101,8 +295,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
