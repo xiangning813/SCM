@@ -12,19 +12,28 @@ namespace SCM.Controllers
         public ActionResult Index()
         {
             return PartialView();
-        }public ActionResult customer()
+        }
+        public ActionResult customer()
         {
             return PartialView();
-        }public ActionResult product()
+        }
+        public ActionResult product()
         {
             return PartialView();
-        }public ActionResult store()
+        }
+        public ActionResult store()
         {
             return PartialView();
-        }public ActionResult supplier()
+        }
+        public ActionResult supplier()
         {
             return PartialView();
-        }public ActionResult type()
+        }
+        public ActionResult type()
+        {
+            return PartialView();
+        }
+        public ActionResult typeadd()
         {
             return PartialView();
         }
