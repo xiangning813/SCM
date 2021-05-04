@@ -309,6 +309,7 @@
     <Content Include="layui\lay\modules\tree.js" />
     <Content Include="layui\lay\modules\upload.js" />
     <Content Include="layui\lay\modules\util.js" />
+    <Content Include="Views\Buy\Depot.cshtml" />
     <None Include="Views\Pdskc\Assemble.cshtml" />
     <None Include="Views\Basic\customer.cshtml" />
     <None Include="Views\Basic\customeradd.cshtml" />
@@ -355,6 +356,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BasicController.cs" />
+    <Compile Include="Controllers\BuyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PdskcController.cs" />
     <Compile Include="Global.asax.cs">
